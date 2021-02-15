@@ -1,0 +1,39 @@
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+     lang="en">
+
+  <head>
+    <title>Welcome</title>
+  </head>
+  <body>
+    <p>
+      Thanks for finding this!
+	</p>
+	<p>
+	My homepage is under construction ...
+  </p>
+
+  <p>
+    Here is the link to our latest project on Cross-Bundle Instructions Native Client:
+    <a href="cbi-nacl.html">CBI NaCl</a> <br />
+  </p>
+
+	<p>
+	Here are some related publications on Anonimity:
+	</p>
+     <a href="https://arxiv.org/pdf/1710.00101.pdf">Statistical Disclosure:
+       Improved, Extended, and Resisted</a> <br />
+     <a href="http://www.sersc.org/journals/IJSIA/vol10_no8_2016/1.pdf">Towards an Analysis of Passive Attacks on Anonymous
+       Communication Systems</a> <br />
+
+
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<a title="Web Analytics" href="http://statcounter.com/"
+target="_blank"><img
+src="//c.statcounter.com/11456876/0/c4dcac86/1/" alt="Web
+Analytics" style="border:none;"></a>
+  </body>
+</html>
