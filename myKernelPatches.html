@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>kernel/git/next/linux-next.git - The linux-next integration testing tree</title>
+<meta name="generator" content="cgit ">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" type="text/css" href="myKernelPatches/cgit.css">
+<link rel="shortcut icon" href="https://git.kernel.org/favicon.ico">
+<link rel="alternate" title="Atom feed" href="http://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/atom/?h=master" type="application/atom+xml">
+<link rel="vcs-git" href="git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git" title="kernel/git/next/linux-next.git Git repository">
+<link rel="vcs-git" href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git" title="kernel/git/next/linux-next.git Git repository">
+<link rel="vcs-git" href="https://kernel.googlesource.com/pub/scm/linux/kernel/git/next/linux-next.git" title="kernel/git/next/linux-next.git Git repository">
+</head>
+<body data-new-gr-c-s-check-loaded="8.904.0" data-gr-ext-installed="">
+<div id="cgit"><table id="header">
+<tbody><tr>
+<td class="logo" rowspan="2"><a href="https://git.kernel.org/"><img src="myKernelPatches/cgit.png" alt="cgit logo"></a></td>
+<td class="main"><a href="https://git.kernel.org/">index</a> : <a title="kernel/git/next/linux-next.git" href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/">kernel/git/next/linux-next.git</a></td><td class="form"><form method="get">
+<input type="hidden" name="showmsg" value="1"><input type="hidden" name="qt" value="author"><input type="hidden" name="q" value="Navid Emamdoost"><select name="h" onchange="this.form.submit();">
+<option value="akpm">akpm</option>
+<option value="akpm-base">akpm-base</option>
+<option value="master" selected="selected">master</option>
+<option value="pending-fixes">pending-fixes</option>
+<option value="stable">stable</option>
+</select> <input type="submit" value="switch"></form></td></tr>
+<tr><td class="sub">Fetched from <a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&q=Navid+Emamdoost&showmsg=1">The linux-next integration testing tree</a></td><td class="sub right">Linux Next Group</td></tr></tbody></table>
+<table class="tabs"><tbody><tr><td>
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/about/">about</a><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/">summary</a><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/refs/">refs</a><a class="active" href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?showmsg=1">log</a><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/">tree</a><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/">commit</a><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/diff/">diff</a><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/stats/">stats</a></td><td class="form"><form class="right" method="get" action="/pub/scm/linux/kernel/git/next/linux-next.git/log/">
+<input type="hidden" name="showmsg" value="1"><select name="qt">
+<option value="grep">log msg</option>
+<option value="author" selected="selected">author</option>
+<option value="committer">committer</option>
+<option value="range">range</option>
+</select>
+<input class="txt" type="search" size="10" name="q" value="Navid Emamdoost">
+<input type="submit" value="search">
+</form>
+</td></tr></tbody></table>
+<div class="content"><table class="list nowrap"><tbody><tr class="nohover"><th class="left">Age</th><th class="left">Commit message (<a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&amp;q=Navid+Emamdoost">Collapse</a>)</th><th class="left">Author</th><th class="left">Files</th><th class="left">Lines</th></tr>
+<tr class="logheader"><td><span title="2020-11-03 22:30:32 +0100">2020-11-03</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=79c43333bdd5a7026a5aab606b53053b643585e7">can: xilinx_can: handle failure cases of pm_runtime_get_sync</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-3</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+Calling pm_runtime_get_sync increments the counter even in case of
+failure, causing incorrect ref count. Call pm_runtime_put if
+pm_runtime_get_sync fails.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Link: https://lore.kernel.org/r/20200605033239.60664-1-navid.emamdoost@gmail.com
+Fixes: 4716620d1b62 ("can: xilinx: Convert to runtime_pm")
+Signed-off-by: Marc Kleine-Budde &lt;mkl@pengutronix.de&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-10-13 20:02:39 -0700">2020-10-13</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f6c992ca7dd4f49042eec61f3fb426c94d901675">clk: bcm2835: add missing release if devm_clk_hw_register fails</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of bcm2835_register_pll(), the allocated pll is
+leaked if devm_clk_hw_register() fails to register hw. Release pll if
+devm_clk_hw_register() fails.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Link: https://lore.kernel.org/r/20200809231202.15811-1-navid.emamdoost@gmail.com
+Fixes: 41691b8862e2 ("clk: bcm2835: Add support for programming the audio domain clocks")
+Signed-off-by: Stephen Boyd &lt;sboyd@kernel.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-08-07 10:45:07 -0600">2020-08-07</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9df0e0c1889677175037445d5ad1654d54176369">drm/panfrost: perfcnt: fix ref count leak in panfrost_perfcnt_enable_locked</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-3</span>/<span class="insertions">+7</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+in panfrost_perfcnt_enable_locked, pm_runtime_get_sync is called which
+increments the counter even in case of failure, leading to incorrect
+ref count. In case of failure, decrement the ref count before returning.
+
+Acked-by: Alyssa Rosenzweig &lt;alyssa.rosenzweig@collabora.com&gt;
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Rob Herring &lt;robh@kernel.org&gt;
+Link: https://patchwork.freedesktop.org/patch/msgid/20200614063619.44944-1-navid.emamdoost@gmail.com
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-08-02 18:11:34 +0300">2020-08-02</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=880e21490be68ef9cc8185962e9b5722a0f1fc4d">mt7601u: add missing release on skb in mt7601u_mcu_msg_send</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of mt7601u_mcu_msg_send(), skb is supposed to be
+consumed on all execution paths. Release skb before returning if
+test_bit() fails.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Acked-by: Jakub Kicinski &lt;kubakici@wp.pl&gt;
+Signed-off-by: Kalle Valo &lt;kvalo@codeaurora.org&gt;
+Link: https://lore.kernel.org/r/20200718052630.11032-1-navid.emamdoost@gmail.com
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-07-22 20:04:17 -0700">2020-07-22</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e6827d1abdc9b061a57d7b7d3019c4e99fabea2f">cxgb4: add missing release on skb in uld_send()</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of uld_send(), the skb is consumed on all
+execution paths except one. Release skb when returning NET_XMIT_DROP.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-07-21 19:01:19 +0200">2020-07-21</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=5648d1c9cadb0a6afb29dd8891159906dadf5c77">mt76: mt76u: add missing release on skb in __mt76x02u_mcu_send_msg</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-2</span>/<span class="insertions">+5</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of __mt76x02u_mcu_send_msg() the skb is consumed
+all execution paths except one. Release skb before returning if
+test_bit() fails.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Felix Fietkau &lt;nbd@nbd.name&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-07-20 18:31:33 -0700">2020-07-20</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1e8fd3a97f2d83a7197876ceb4f37b4c2b00a0f3">nfc: s3fwrn5: add missing release on skb in s3fwrn5_recv_frame</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+The implementation of s3fwrn5_recv_frame() is supposed to consume skb on
+all execution paths. Release skb before returning -ENODEV.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-07-17 17:10:34 +0200">2020-07-17</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c5d5a32ead1e3a61a07a1e59eb52a53e4a6b2a7f">drm/etnaviv: fix ref count leak via pm_runtime_get_sync</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-4</span>/<span class="insertions">+10</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+in etnaviv_gpu_submit, etnaviv_gpu_recover_hang, etnaviv_gpu_debugfs,
+and etnaviv_gpu_init the call to pm_runtime_get_sync increments the
+counter even in case of failure, leading to incorrect ref count.
+In case of failure, decrement the ref count before returning.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Lucas Stach &lt;l.stach@pengutronix.de&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-07-01 01:59:22 -0400">2020-07-01</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f79f94765f8c39db0b7dec1d335ab046aac03f20">drm/amdgpu/display: fix ref count leak when pm_runtime_get_sync fails</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-4</span>/<span class="insertions">+12</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+The call to pm_runtime_get_sync increments the counter even in case of
+failure, leading to incorrect ref count.
+In case of failure, decrement the ref count before returning.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Alex Deucher &lt;alexander.deucher@amd.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-07-01 01:59:22 -0400">2020-07-01</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e008fa6fb41544b63973a529b704ef342f47cc65">drm/amdgpu: fix ref count leak in amdgpu_display_crtc_set_config</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-2</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+in amdgpu_display_crtc_set_config, the call to pm_runtime_get_sync
+increments the counter even in case of failure, leading to incorrect
+ref count. In case of failure, decrement the ref count before returning.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Alex Deucher &lt;alexander.deucher@amd.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-07-01 01:59:22 -0400">2020-07-01</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=5509ac65f2fe5aa3c0003237ec629ca55024307c">drm/amd/display: fix ref count leak in amdgpu_drm_ioctl</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+2</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+in amdgpu_drm_ioctl the call to pm_runtime_get_sync increments the
+counter even in case of failure, leading to incorrect
+ref count. In case of failure, decrement the ref count before returning.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Alex Deucher &lt;alexander.deucher@amd.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-07-01 01:59:22 -0400">2020-07-01</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9ba8923cbbe11564dd1bf9f3602add9a9cfbb5c6">drm/amdgpu: fix ref count leak in amdgpu_driver_open_kms</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+2</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+in amdgpu_driver_open_kms the call to pm_runtime_get_sync increments the
+counter even in case of failure, leading to incorrect
+ref count. In case of failure, decrement the ref count before returning.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Alex Deucher &lt;alexander.deucher@amd.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-06-29 09:38:41 +0900">2020-06-29</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=d4f5a095daf0d25f0b385e1ef26338608433a4c5">drm/exynos: fix ref count leak in mic_pre_enable</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+in mic_pre_enable, pm_runtime_get_sync is called which
+increments the counter even in case of failure, leading to incorrect
+ref count. In case of failure, decrement the ref count before returning.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Inki Dae &lt;inki.dae@samsung.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-06-16 10:38:07 +0200">2020-06-16</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=861254d826499944cb4d9b5a15f5a794a6b99a69">gpio: arizona: put pm_runtime in case of failure</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+5</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+Calling pm_runtime_get_sync increments the counter even in case of
+failure, causing incorrect ref count if pm_runtime_put is not called in
+error handling paths. Call pm_runtime_put if pm_runtime_get_sync fails.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Acked-by: Charles Keepax &lt;ckeepax@opensource.cirrus.com&gt;
+Link: https://lore.kernel.org/r/20200605030052.78235-1-navid.emamdoost@gmail.com
+Signed-off-by: Linus Walleij &lt;linus.walleij@linaro.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-06-16 10:38:07 +0200">2020-06-16</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e6f390a834b56583e6fc0949822644ce92fbb107">gpio: arizona: handle pm_runtime_get_sync failure case</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+Calling pm_runtime_get_sync increments the counter even in case of
+failure, causing incorrect ref count. Call pm_runtime_put if
+pm_runtime_get_sync fails.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Acked-by: Charles Keepax &lt;ckeepax@opensource.cirrus.com&gt;
+Link: https://lore.kernel.org/r/20200605025207.65719-1-navid.emamdoost@gmail.com
+Signed-off-by: Linus Walleij &lt;linus.walleij@linaro.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-06-14 15:25:04 +0100">2020-06-14</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=d88de040e1df38414fc1e4380be9d0e997ab4d58">iio: pressure: zpa2326: handle pm_runtime_get_sync failure</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+Calling pm_runtime_get_sync increments the counter even in case of
+failure, causing incorrect ref count. Call pm_runtime_put if
+pm_runtime_get_sync fails.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Fixes: 03b262f2bbf4 ("iio:pressure: initial zpa2326 barometer support")
+Cc: &lt;Stable@vger.kernel.org&gt;
+Signed-off-by: Jonathan Cameron &lt;Jonathan.Cameron@huawei.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-06-04 21:14:50 -0600">2020-06-04</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=eea1238867205b9e48a67c1a63219529a73c46fd">sata_rcar: handle pm_runtime_get_sync failure cases</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-4</span>/<span class="insertions">+7</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+Calling pm_runtime_get_sync increments the counter even in case of
+failure, causing incorrect ref count. Call pm_runtime_put if
+pm_runtime_get_sync fails.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Jens Axboe &lt;axboe@kernel.dk&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-06-02 15:50:51 +0200">2020-06-02</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=ca162ce98110b98e7d97b7157328d34dcfdd40a9">pwm: img: Call pm_runtime_put() in pm_runtime_get_sync() failed case</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-2</span>/<span class="insertions">+6</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+Even in failed case of pm_runtime_get_sync(), the usage_count is
+incremented. In order to keep the usage_count with correct value call
+appropriate pm_runtime_put().
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Thierry Reding &lt;thierry.reding@gmail.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-05-21 15:25:51 -0700">2020-05-21</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c54d481d71c6849e044690d3960aaebc730224cc">apparmor: Fix use-after-free in aa_audit_rule_init</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+2</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of aa_audit_rule_init(), when aa_label_parse()
+fails the allocated memory for rule is released using
+aa_audit_rule_free(). But after this release, the return statement
+tries to access the label field of the rule which results in
+use-after-free. Before releasing the rule, copy errNo and return it
+after release.
+
+Fixes: 52e8c38001d8 ("apparmor: Fix memory leak of rule on error exit path")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: John Johansen &lt;john.johansen@canonical.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-01-15 11:46:59 +0100">2020-01-15</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=40efb09a7f53125719e49864da008495e39aaa1e">drm/vmwgfx: prevent memory leak in vmw_cmdbuf_res_add</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In vmw_cmdbuf_res_add if drm_ht_insert_item fails the allocated memory
+for cres should be released.
+
+Fixes: 18e4a4669c50 ("drm/vmwgfx: Fix compat shader namespace")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: Thomas Hellstrom &lt;thellstrom@vmware.com&gt;
+Signed-off-by: Thomas Hellstrom &lt;thellstrom@vmware.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2020-01-04 13:55:09 -0800">2020-01-04</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a7c46c0c0e3d62f2764cd08b90934cd2aaaf8545">mm/gup: fix memory leak in __gup_benchmark_ioctl</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-2</span>/<span class="insertions">+6</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of __gup_benchmark_ioctl() the allocated pages
+should be released before returning in case of an invalid cmd.  Release
+pages via kvfree().
+
+[akpm@linux-foundation.org: rework code flow, return -EINVAL rather than -1]
+Link: http://lkml.kernel.org/r/20191211174653.4102-1-navid.emamdoost@gmail.com
+Fixes: 714a3a1ebafe ("mm/gup_benchmark.c: add additional pinning methods")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: Andrew Morton &lt;akpm@linux-foundation.org&gt;
+Reviewed-by: Ira Weiny &lt;ira.weiny@intel.com&gt;
+Reviewed-by: John Hubbard &lt;jhubbard@nvidia.com&gt;
+Cc: Keith Busch &lt;keith.busch@intel.com&gt;
+Cc: Kirill A. Shutemov &lt;kirill.shutemov@linux.intel.com&gt;
+Cc: Dave Hansen &lt;dave.hansen@intel.com&gt;
+Cc: Dan Williams &lt;dan.j.williams@intel.com&gt;
+Cc: David Hildenbrand &lt;david@redhat.com&gt;
+Signed-off-by: Andrew Morton &lt;akpm@linux-foundation.org&gt;
+Signed-off-by: Linus Torvalds &lt;torvalds@linux-foundation.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-12-18 21:08:29 +0200">2019-12-18</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4282dc057d750c6a7dd92953564b15c26b54c22c">brcmfmac: Fix memory leak in brcmf_usbdev_qinit</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of brcmf_usbdev_qinit() the allocated memory for
+reqs is leaking if usb_alloc_urb() fails. Release reqs in the error
+handling path.
+
+Fixes: 71bb244ba2fd ("brcm80211: fmac: add USB support for bcm43235/6/8 chipsets")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Kalle Valo &lt;kvalo@codeaurora.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-12-18 20:20:49 +0200">2019-12-18</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=5cc509aa83c6acd2c5cd94f99065c39d2bd0a490">brcmfmac: Fix memory leak in brcmf_p2p_create_p2pdev()</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+2</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of brcmf_p2p_create_p2pdev() the allocated memory
+for p2p_vif is leaked when the mac address is the same as primary
+interface. To fix this, go to error path to release p2p_vif via
+brcmf_free_vif().
+
+Fixes: cb746e47837a ("brcmfmac: check p2pdev mac address uniqueness")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Kalle Valo &lt;kvalo@codeaurora.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-12-16 16:26:54 -0800">2019-12-16</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f37f710353677639bc5d37ee785335994adf2529">net: gemini: Fix memory leak in gmac_setup_txqs</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+2</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of gmac_setup_txqs() the allocated desc_ring is
+leaked if TX queue base is not aligned. Release it via
+dma_free_coherent.
+
+Fixes: 4d5ae32f5e1e ("net: ethernet: Add a driver for Gemini gigabit ethernet")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: Linus Walleij &lt;linus.walleij@linaro.org&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-12-09 15:51:32 -0600">2019-12-09</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8c386cc817878588195dde38e919aa6ba9409d58">PCI/IOV: Fix memory leak in pci_iov_add_virtfn()</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-5</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of pci_iov_add_virtfn() the allocated virtfn is
+leaked if pci_setup_device() fails. The error handling is not calling
+pci_stop_and_remove_bus_device(). Change the goto label to failed2.
+
+Fixes: 156c55325d30 ("PCI: Check for pci_setup_device() failure in pci_iov_add_virtfn()")
+Link: https://lore.kernel.org/r/20191125195255.23740-1-navid.emamdoost@gmail.com
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Bjorn Helgaas &lt;bhelgaas@google.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-11-25 10:21:33 +0100">2019-11-25</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=6645d42d79d33e8a9fe262660a75d5f4556bbea9">dma-buf: Fix memory leak in sync_file_merge()</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of sync_file_merge() the allocated sync_file is
+leaked if number of fences overflows. Release sync_file by goto err.
+
+Fixes: a02b9dc90d84 ("dma-buf/sync_file: refactor fence storage in struct sync_file")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Cc: stable@vger.kernel.org
+Signed-off-by: Daniel Vetter &lt;daniel.vetter@ffwll.ch&gt;
+Link: https://patchwork.freedesktop.org/patch/msgid/20191122220957.30427-1-navid.emamdoost@gmail.com
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-11-23 18:20:17 -0800">2019-11-23</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=b6631c6031c746ed004c4221ec0616d7a520f441">sctp: Fix memory leak in sctp_sf_do_5_2_4_dupcook</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of sctp_sf_do_5_2_4_dupcook() the allocated
+new_asoc is leaked if security_sctp_assoc_request() fails. Release it
+via sctp_association_free().
+
+Fixes: 2277c7cd75e3 ("sctp: Add LSM hooks")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Acked-by: Marcelo Ricardo Leitner &lt;marcelo.leitner@gmail.com&gt;
+Signed-off-by: Jakub Kicinski &lt;jakub.kicinski@netronome.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-11-22 10:42:53 +0100">2019-11-22</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=d088337c38a5cd8f0230fbf2d514ff7672f9d0d3">Bluetooth: Fix memory leak in hci_connect_le_scan</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of hci_connect_le_scan() when conn is added via
+hci_conn_add(), if hci_explicit_conn_params_set() fails the allocated
+memory for conn is leaked. Use hci_conn_del() to release it.
+
+Fixes: f75113a26008 ("Bluetooth: add hci_connect_le_scan")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Marcel Holtmann &lt;marcel@holtmann.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-11-21 11:33:41 -0700">2019-11-21</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=03bf73c315edca28f47451913177e14cd040a216">nbd: prevent memory leak</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-2</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In nbd_add_socket when krealloc succeeds, if nsock's allocation fail the
+reallocted memory is leak. The correct behaviour should be assigning the
+reallocted memory to config-&gt;socks right after success.
+
+Reviewed-by: Josef Bacik &lt;josef@toxicpanda.com&gt;
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Jens Axboe &lt;axboe@kernel.dk&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-11-18 14:26:43 +0100">2019-11-18</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=450c3d4166837c496ebce03650c08800991f2150">affs: fix a memory leak in affs_remount</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-6</span>/<span class="insertions">+0</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In affs_remount if data is provided it is duplicated into new_opts.  The
+allocated memory for new_opts is only released if parse_options fails.
+
+There's a bit of history behind new_options, originally there was
+save/replace options on the VFS layer so the 'data' passed must not
+change (thus strdup), this got cleaned up in later patches. But not
+completely.
+
+There's no reason to do the strdup in cases where the filesystem does
+not need to reuse the 'data' again, because strsep would modify it
+directly.
+
+Fixes: c8f33d0bec99 ("affs: kstrdup() memory handling")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+[ update changelog ]
+Signed-off-by: David Sterba &lt;dsterba@suse.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-11-10 07:23:38 +0100">2019-11-10</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c3df30a01da4955e04fa068c503cd784b31dad92">media: aspeed-video: Fix memory leaks in aspeed_video_probe</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+2</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of aspeed_video_probe() the allocated memory for
+video should be released if either devm_ioremap_resource()
+or aspeed_video_init() or aspeed_video_setup_video() fails. Replace
+kzalloc() with devm_kzalloc to avoid explicit release for video.
+
+Fixes: d2b4387f3bdf ("media: platform: Add Aspeed Video Engine driver")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: Jae Hyun Yoo &lt;jae.hyun.yoo@linux.intel.com&gt;
+Reviewed-by: Eddie James &lt;eajames@linux.ibm.com&gt;
+Signed-off-by: Hans Verkuil &lt;hverkuil-cisco@xs4all.nl&gt;
+Signed-off-by: Mauro Carvalho Chehab &lt;mchehab@kernel.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-11-04 21:47:20 +0100">2019-11-04</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=fb5be6a7b4863ecc44963bb80ca614584b6c7817">can: gs_usb: gs_can_open(): prevent memory leak</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In gs_can_open() if usb_submit_urb() fails the allocated urb should be
+released.
+
+Fixes: d08e973a77d1 ("can: gs_usb: Added support for the GS_USB CAN devices")
+Cc: linux-stable &lt;stable@vger.kernel.org&gt;
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Marc Kleine-Budde &lt;mkl@pengutronix.de&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-29 16:20:25 -0700">2019-10-29</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=6f3ef5c25cc762687a7341c18cbea5af54461407">wimax: i2400: Fix memory leak in i2400m_op_rfkill_sw_toggle</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of i2400m_op_rfkill_sw_toggle() the allocated
+buffer for cmd should be released before returning. The
+documentation for i2400m_msg_to_dev() says when it returns the buffer
+can be reused. Meaning cmd should be released in either case. Move
+kfree(cmd) before return to be reached by all execution paths.
+
+Fixes: 2507e6ab7a9a ("wimax: i2400: fix memory leak")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-28 13:10:42 +0000">2019-10-28</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=45c1380358b12bf2d1db20a5874e9544f56b34ab">ASoC: SOF: ipc: Fix memory leak in sof_set_get_large_ctrl_data</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of sof_set_get_large_ctrl_data() there is a memory
+leak in case an error. Release partdata if sof_get_ctrl_copy_params()
+fails.
+
+Fixes: 54d198d5019d ("ASoC: SOF: Propagate sof_get_ctrl_copy_params() error properly")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Link: https://lore.kernel.org/r/20191027215330.12729-1-navid.emamdoost@gmail.com
+Signed-off-by: Mark Brown &lt;broonie@kernel.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-28 13:10:23 +0000">2019-10-28</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c0a333d842ef67ac04adc72ff79dc1ccc3dca4ed">ASoC: SOF: Fix memory leak in sof_dfsentry_write</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-2</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the implementation of sof_dfsentry_write() memory allocated for
+string is leaked in case of an error. Go to error handling path if the
+d_name.name is not valid.
+
+Fixes: 091c12e1f50c ("ASoC: SOF: debug: add new debugfs entries for IPC flood test")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Link: https://lore.kernel.org/r/20191027194856.4056-1-navid.emamdoost@gmail.com
+Signed-off-by: Mark Brown &lt;broonie@kernel.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-27 08:58:45 +0200">2019-10-27</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9bbfceea12a8f145097a27d7c7267af25893c060">usb: dwc3: pci: prevent memory leak in dwc3_pci_probe</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In dwc3_pci_probe a call to platform_device_alloc allocates a device
+which is correctly put in case of error except one case: when the call to
+platform_device_add_properties fails it directly returns instead of
+going to error handling. This commit replaces return with the goto.
+
+Fixes: 1a7b12f69a94 ("usb: dwc3: pci: Supply device properties via driver data")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Felipe Balbi &lt;felipe.balbi@linux.intel.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-25 13:38:19 -0700">2019-10-25</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=27d461333459d282ffa4a2bdb6b215a59d493a8f">i40e: prevent memory leak in i40e_setup_macvlans</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In i40e_setup_macvlans if i40e_setup_channel fails the allocated memory
+for ch should be released.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Tested-by: Andrew Bowers &lt;andrewx.bowers@intel.com&gt;
+Signed-off-by: Jeff Kirsher &lt;jeffrey.t.kirsher@intel.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-24 18:31:51 -0300">2019-10-24</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2289adbfa559050d2a38bcd9caac1c18b800e928">media: usb: fix memory leak in af9005_identify_state</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-2</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In af9005_identify_state when returning -EIO the allocated buffer should
+be released. Replace the "return -EIO" with assignment into ret and move
+deb_info() under a check.
+
+Fixes: af4e067e1dcf ("V4L/DVB (5625): Add support for the AF9005 demodulator from Afatech")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Hans Verkuil &lt;hverkuil-cisco@xs4all.nl&gt;
+Signed-off-by: Mauro Carvalho Chehab &lt;mchehab+samsung@kernel.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-23 14:42:44 -0500">2019-10-23</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e13de8fe0d6a51341671bbe384826d527afe8d44">of: unittest: fix memory leak in unittest_data_add</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In unittest_data_add, a copy buffer is created via kmemdup. This buffer
+is leaked if of_fdt_unflatten_tree fails. The release for the
+unittest_data buffer is added.
+
+Fixes: b951f9dc7f25 ("Enabling OF selftest to run without machine's devicetree")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: Frank Rowand &lt;frowand.list@gmail.com&gt;
+Signed-off-by: Rob Herring &lt;robh@kernel.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-23 20:57:05 +0200">2019-10-23</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=29cd13cfd7624726d9e6becbae9aa419ef35af7f">drm/v3d: Fix memory leak in v3d_submit_cl_ioctl</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the impelementation of v3d_submit_cl_ioctl() there are two memory
+leaks. One is when allocation for bin fails, and the other is when bin
+initialization fails. If kcalloc fails to allocate memory for bin then
+render-&gt;base should be put. Also, if v3d_job_init() fails to initialize
+bin-&gt;base then allocated memory for bin should be released.
+
+Fixes: a783a09ee76d ("drm/v3d: Refactor job management.")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: Eric Anholt &lt;eric@anholt.net&gt;
+Signed-off-by: Daniel Vetter &lt;daniel.vetter@ffwll.ch&gt;
+Link: https://patchwork.freedesktop.org/patch/msgid/20191021185250.26130-1-navid.emamdoost@gmail.com
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-22 14:42:34 -0500">2019-10-22</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4aa7afb0ee20a97fbf0c5bab3df028d5fb85fdab">ipmi: Fix memory leak in __ipmi_bmc_register</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In the impelementation of __ipmi_bmc_register() the allocated memory for
+bmc should be released in case ida_simple_get() fails.
+
+Fixes: 68e7e50f195f ("ipmi: Don't use BMC product/dev ids in the BMC name")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Message-Id: &lt;20191021200649.1511-1-navid.emamdoost@gmail.com&gt;
+Signed-off-by: Corey Minyard &lt;cminyard@mvista.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-18 12:11:55 -0700">2019-10-18</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c7ed6d0183d5ea9bc31bcaeeba4070bd62546471">net/mlx5: fix memory leak in mlx5_fw_fatal_reporter_dump</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In mlx5_fw_fatal_reporter_dump if mlx5_crdump_collect fails the
+allocated memory for cr_data must be released otherwise there will be
+memory leak. To fix this, this commit changes the return instruction
+into goto error handling.
+
+Fixes: 9b1f29823605 ("net/mlx5: Add support for FW fatal reporter dump")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Saeed Mahameed &lt;saeedm@mellanox.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-18 12:11:54 -0700">2019-10-18</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c8c2a057fdc7de1cd16f4baa51425b932a42eb39">net/mlx5: prevent memory leak in mlx5_fpga_conn_create_cq</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In mlx5_fpga_conn_create_cq if mlx5_vector2eqn fails the allocated
+memory should be released.
+
+Fixes: 537a50574175 ("net/mlx5: FPGA, Add high-speed connection routines")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Saeed Mahameed &lt;saeedm@mellanox.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-10 14:50:32 +0200">2019-10-10</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e0b0cb9388642c104838fac100a4af32745621e2">virt: vbox: fix memory leak in hgcm_call_preprocess_linaddr</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+2</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In hgcm_call_preprocess_linaddr memory is allocated for bounce_buf but
+is not released if copy_form_user fails. In order to prevent memory leak
+in case of failure, the assignment to bounce_buf_ret is moved before the
+error check. This way the allocated bounce_buf will be released by the
+caller.
+
+Fixes: 579db9d45cb4 ("virt: Add vboxguest VMMDEV communication code")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: Hans de Goede &lt;hdegoede@redhat.com&gt;
+Link: https://lore.kernel.org/r/20190930204223.3660-1-navid.emamdoost@gmail.com
+Signed-off-by: Greg Kroah-Hartman &lt;gregkh@linuxfoundation.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-10 23:42:45 +1100">2019-10-10</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c03b04dcdba1da39903e23cc4d072abf8f68f2dd">crypto: user - fix memory leak in crypto_reportstat</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In crypto_reportstat, a new skb is created by nlmsg_new(). This skb is
+leaked if crypto_reportstat_alg() fails. Required release for skb is
+added.
+
+Fixes: cac5818c25d0 ("crypto: user - Implement a generic crypto statistics")
+Cc: &lt;stable@vger.kernel.org&gt;
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Herbert Xu &lt;herbert@gondor.apana.org.au&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-10 23:42:45 +1100">2019-10-10</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=ffdde5932042600c6807d46c1550b28b0db6a3bc">crypto: user - fix memory leak in crypto_report</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In crypto_report, a new skb is created via nlmsg_new(). This skb should
+be released if crypto_report_alg() fails.
+
+Fixes: a38f7907b926 ("crypto: Add userspace configuration API")
+Cc: &lt;stable@vger.kernel.org&gt;
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Herbert Xu &lt;herbert@gondor.apana.org.au&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-10 07:18:10 -0300">2019-10-10</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8dbdee8e8acc4f56febb8f5bf226f1ebfdd36219">media: usb: null check create_singlethread_workqueue</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In sd_start return value of create_singlethread_workqueue needs null
+check.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Hans Verkuil &lt;hverkuil-cisco@xs4all.nl&gt;
+Signed-off-by: Mauro Carvalho Chehab &lt;mchehab+samsung@kernel.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-10 07:17:54 -0300">2019-10-10</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=68085f314d6429ddfb09756623e2bfeec2966909">media: gspca: null check create_singlethread_workqueue</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In sd_start the return value of create_singlethread_workqueue needs
+null check.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Hans Verkuil &lt;hverkuil-cisco@xs4all.nl&gt;
+Signed-off-by: Mauro Carvalho Chehab &lt;mchehab+samsung@kernel.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-09 19:11:27 +0100">2019-10-09</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9c0530e898f384c5d279bfcebd8bb17af1105873">iio: imu: adis16400: fix memory leak</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In adis_update_scan_mode_burst, if adis-&gt;buffer allocation fails release
+the adis-&gt;xfer.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: Alexandru Ardelean &lt;alexandru.ardelean@analog.com&gt;
+Signed-off-by: Jonathan Cameron &lt;Jonathan.Cameron@huawei.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-09 19:11:27 +0100">2019-10-09</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=ab612b1daf415b62c58e130cb3d0f30b255a14d0">iio: imu: adis16400: release allocated memory on failure</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In adis_update_scan_mode, if allocation for adis-&gt;buffer fails,
+previously allocated adis-&gt;xfer needs to be released.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: Alexandru Ardelean &lt;alexandru.ardelean@analog.com&gt;
+Signed-off-by: Jonathan Cameron &lt;Jonathan.Cameron@huawei.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-09 13:01:06 +0300">2019-10-09</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=0f4f199443faca715523b0659aa536251d8b978f">iwlwifi: pcie: fix memory leaks in iwl_pcie_ctxt_info_gen3_init</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-11</span>/<span class="insertions">+25</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In iwl_pcie_ctxt_info_gen3_init there are cases that the allocated dma
+memory is leaked in case of error.
+
+DMA memories prph_scratch, prph_info, and ctxt_info_gen3 are allocated
+and initialized to be later assigned to trans_pcie. But in any error case
+before such assignment the allocated memories should be released.
+
+First of such error cases happens when iwl_pcie_init_fw_sec fails.
+Current implementation correctly releases prph_scratch. But in two
+sunsequent error cases where dma_alloc_coherent may fail, such
+releases are missing.
+
+This commit adds release for prph_scratch when allocation for
+prph_info fails, and adds releases for prph_scratch and prph_info when
+allocation for ctxt_info_gen3 fails.
+
+Fixes: 2ee824026288 ("iwlwifi: pcie: support context information for 22560 devices")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Luca Coelho &lt;luciano.coelho@intel.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-09 13:01:06 +0300">2019-10-09</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=b4b814fec1a5a849383f7b3886b654a13abbda7d">iwlwifi: dbg_ini: fix memory leak in alloc_sgtable</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In alloc_sgtable if alloc_page fails, the alocated table should be
+released.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Luca Coelho &lt;luciano.coelho@intel.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-09 11:25:22 +0300">2019-10-09</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=d10dcb615c8e29d403a24d35f8310a7a53e3050c">mwifiex: pcie: Fix memory leak in mwifiex_pcie_init_evt_ring</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In mwifiex_pcie_init_evt_ring, a new skb is allocated which should be
+released if mwifiex_map_pci_memory() fails. The release for skb and
+card-&gt;evtbd_ring_vbase is added.
+
+Fixes: 0732484b47b5 ("mwifiex: separate ring initialization and ring creation routines")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Acked-by: Ganapathi Bhat &lt;gbhat@marvell.com&gt;
+Signed-off-by: Kalle Valo &lt;kvalo@codeaurora.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-09 11:24:52 +0300">2019-10-09</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=db8fd2cde93227e566a412cf53173ffa227998bc">mwifiex: pcie: Fix memory leak in mwifiex_pcie_alloc_cmdrsp_buf</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In mwifiex_pcie_alloc_cmdrsp_buf, a new skb is allocated which should be
+released if mwifiex_map_pci_memory() fails. The release is added.
+
+Fixes: fc3314609047 ("mwifiex: use pci_alloc/free_consistent APIs for PCIe")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Acked-by: Ganapathi Bhat &lt;gbhat@marvell.com&gt;
+Signed-off-by: Kalle Valo &lt;kvalo@codeaurora.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-07 21:34:52 +0200">2019-10-07</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1399c59fa92984836db90538cf92397fe7caaa57">nl80211: fix memory leak in nl80211_get_ftm_responder_stats</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In nl80211_get_ftm_responder_stats, a new skb is created via nlmsg_new
+named msg. If nl80211hdr_put() fails, then msg should be released. The
+return statement should be replace by goto to error handling code.
+
+Fixes: 81e54d08d9d8 ("cfg80211: support FTM responder configuration/statistics")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Link: https://lore.kernel.org/r/20191004194220.19412-1-navid.emamdoost@gmail.com
+Signed-off-by: Johannes Berg &lt;johannes.berg@intel.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-07 07:44:16 -0300">2019-10-07</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a7b2df76b42bdd026e3106cf2ba97db41345a177">media: rc: prevent memory leak in cx23888_ir_probe</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In cx23888_ir_probe if kfifo_alloc fails the allocated memory for state
+should be released.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Sean Young &lt;sean@mess.org&gt;
+Signed-off-by: Mauro Carvalho Chehab &lt;mchehab+samsung@kernel.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-07 12:34:55 +0200">2019-10-07</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=80b15db5e1e9c3300de299b2d43d1aafb593e6ac">staging: vt6655: Fix memory leak in vt6655_probe</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In vt6655_probe, if vnt_init() fails the cleanup code needs to be called
+like other error handling cases. The call to device_free_info() is
+added.
+
+Fixes: 67013f2c0e58 ("staging: vt6655: mac80211 conversion add main mac80211 functions")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Cc: stable &lt;stable@vger.kernel.org&gt;
+Link: https://lore.kernel.org/r/20191004200319.22394-1-navid.emamdoost@gmail.com
+Signed-off-by: Greg Kroah-Hartman &lt;gregkh@linuxfoundation.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-04 21:13:47 -0700">2019-10-04</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=bbe692e349e2a1edf3fe0a29a0e05899c9c94d51">rpmsg: char: release allocated memory</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-2</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In rpmsg_eptdev_write_iter, if copy_from_iter_full fails the allocated
+buffer needs to be released.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Bjorn Andersson &lt;bjorn.andersson@linaro.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-04 18:33:13 -0700">2019-10-04</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1acb8f2a7a9f10543868ddd737e37424d5c36cf4">net: qlogic: Fix memory leak in ql_alloc_large_buffers</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In ql_alloc_large_buffers, a new skb is allocated via netdev_alloc_skb.
+This skb should be released if pci_dma_mapping_error fails.
+
+Fixes: 0f8ab89e825f ("qla3xxx: Check return code from pci_map_single() 
+in ql_release_to_lrg_buf_free_list(), ql_populate_free_queue(), 
+ql_alloc_large_buffers(), and ql3xxx_send()")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-04 18:22:14 +0200">2019-10-04</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=fc739a058d99c9297ef6bfd923b809d85855b9a9">misc: fastrpc: prevent memory leak in fastrpc_dma_buf_attach</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In fastrpc_dma_buf_attach if dma_get_sgtable fails the allocated memory
+for a should be released.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Link: https://lore.kernel.org/r/20190925152742.16258-1-navid.emamdoost@gmail.com
+Signed-off-by: Greg Kroah-Hartman &lt;gregkh@linuxfoundation.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-05 01:06:20 +1000">2019-10-05</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=128c66429247add5128c03dc1e144ca56f05a4e2">crypto: ccp - Release all allocated memory if sha type is invalid</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+2</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+Release all allocated memory if sha type is invalid:
+In ccp_run_sha_cmd, if the type of sha is invalid, the allocated
+hmac_buf should be released.
+
+v2: fix the goto.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Acked-by: Gary R Hook &lt;gary.hook@amd.com&gt;
+Signed-off-by: Herbert Xu &lt;herbert@gondor.apana.org.au&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-04 10:20:57 +0200">2019-10-04</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=5bdea6060618cfcf1459dca137e89aee038ac8b9">Staging: fbtft: fix memory leak in fbtft_framebuffer_alloc</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-2</span>/<span class="insertions">+5</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In fbtft_framebuffer_alloc the error handling path should take care of
+releasing frame buffer after it is allocated via framebuffer_alloc, too.
+Therefore, in two failure cases the goto destination is changed to
+address this issue.
+
+Fixes: c296d5f9957c ("staging: fbtft: core support")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: Dan Carpenter &lt;dan.carpenter@gmail.com&gt;
+Cc: stable &lt;stable@vger.kernel.org&gt;
+Link: https://lore.kernel.org/r/20190930030949.28615-1-navid.emamdoost@gmail.com
+Signed-off-by: Greg Kroah-Hartman &lt;gregkh@linuxfoundation.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-03 09:11:06 -0500">2019-10-03</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=cabe144bfd0c106c2e55d900320c2464c42ab94c">drm/amd/display: memory leak</a></td><td>Navid Emamdoost</td><td>7</td><td><span class="deletions">-0</span>/<span class="insertions">+7</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In dcn*_clock_source_create when dcn20_clk_src_construct fails allocated
+clk_src needs release.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Alex Deucher &lt;alexander.deucher@amd.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-03 09:11:05 -0500">2019-10-03</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1104057562ecc1a48ce75b7ae17af948b3f63d7b">drm/amdgpu: fix multiple memory leaks in acp_hw_init</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-12</span>/<span class="insertions">+22</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In acp_hw_init there are some allocations that needs to be released in
+case of failure:
+
+1- adev-&gt;acp.acp_genpd should be released if any allocation attemp for
+adev-&gt;acp.acp_cell, adev-&gt;acp.acp_res or i2s_pdata fails.
+2- all of those allocations should be released if
+mfd_add_hotplug_devices or pm_genpd_add_device fail.
+3- Release is needed in case of time out values expire.
+
+Reviewed-by: Christian König &lt;christian.koenig@amd.com&gt;
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Alex Deucher &lt;alexander.deucher@amd.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-03 09:11:03 -0500">2019-10-03</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e7883ab63213e3eea001af522ca5f4fc91075572">drm/amd/display: prevent memory leak</a></td><td>Navid Emamdoost</td><td>5</td><td><span class="deletions">-0</span>/<span class="insertions">+5</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In dcn*_create_resource_pool the allocated memory should be released if
+construct pool fails.
+
+Reviewed-by: Harry Wentland &lt;harry.wentland@amd.com&gt;
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Alex Deucher &lt;alexander.deucher@amd.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-02 12:58:33 -0500">2019-10-02</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=055e547478a11a6360c7ce05e2afc3e366968a12">drm/amd/display: memory leak</a></td><td>Navid Emamdoost</td><td>7</td><td><span class="deletions">-0</span>/<span class="insertions">+7</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In dcn*_clock_source_create when dcn20_clk_src_construct fails allocated
+clk_src needs release.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Alex Deucher &lt;alexander.deucher@amd.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-02 12:58:33 -0500">2019-10-02</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=57be09c6e8747bf48704136d9e3f92bfb93f5725">drm/amdgpu: fix multiple memory leaks in acp_hw_init</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-12</span>/<span class="insertions">+22</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In acp_hw_init there are some allocations that needs to be released in
+case of failure:
+
+1- adev-&gt;acp.acp_genpd should be released if any allocation attemp for
+adev-&gt;acp.acp_cell, adev-&gt;acp.acp_res or i2s_pdata fails.
+2- all of those allocations should be released if
+mfd_add_hotplug_devices or pm_genpd_add_device fail.
+3- Release is needed in case of time out values expire.
+
+Reviewed-by: Christian König &lt;christian.koenig@amd.com&gt;
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Alex Deucher &lt;alexander.deucher@amd.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-02 07:31:26 +0300">2019-10-02</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a2cdd07488e666aa93a49a3fc9c9b1299e27ef3c">rtl8xxxu: prevent leaking urb</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In rtl8xxxu_submit_int_urb if usb_submit_urb fails the allocated urb
+should be released.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: Chris Chiu &lt;chiu@endlessm.com&gt;
+Signed-off-by: Kalle Valo &lt;kvalo@codeaurora.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-01 18:39:12 +0100">2019-10-01</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=057b8945f78f76d0b04eeb5c27cd9225e5e7ad86">spi: lpspi: fix memory leak in fsl_lpspi_probe</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In fsl_lpspi_probe an SPI controller is allocated either via
+spi_alloc_slave or spi_alloc_master. In all but one error cases this
+controller is put by going to error handling code. This commit fixes the
+case when pm_runtime_get_sync fails and it should go to the error
+handling path.
+
+Fixes: 944c01a889d9 ("spi: lpspi: enable runtime pm for lpspi")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Link: https://lore.kernel.org/r/20190930034602.1467-1-navid.emamdoost@gmail.com
+Signed-off-by: Mark Brown &lt;broonie@kernel.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-01 18:38:52 +0100">2019-10-01</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=d3b0ffa1d75d5305ebe34735598993afbb8a869d">spi: gpio: prevent memory leak in spi_gpio_probe</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In spi_gpio_probe an SPI master is allocated via spi_alloc_master, but
+this controller should be released if devm_add_action_or_reset fails,
+otherwise memory leaks. In order to avoid leak spi_contriller_put must
+be called in case of failure for devm_add_action_or_reset.
+
+Fixes: 8b797490b4db ("spi: gpio: Make sure spi_master_put() is called in every error path")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Link: https://lore.kernel.org/r/20190930205241.5483-1-navid.emamdoost@gmail.com
+Signed-off-by: Mark Brown &lt;broonie@kernel.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-01 11:34:55 -0300">2019-10-01</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=34b3be18a04ecdc610aae4c48e5d1b799d8689f6">RDMA/hfi1: Prevent memory leak in sdma_init</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In sdma_init if rhashtable_init fails the allocated memory for
+tmp_sdma_rht should be released.
+
+Fixes: 5a52a7acf7e2 ("IB/hfi1: NULL pointer dereference when freeing rhashtable")
+Link: https://lore.kernel.org/r/20190925144543.10141-1-navid.emamdoost@gmail.com
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Acked-by: Dennis Dalessandro &lt;dennis.dalessandro@intel.com&gt;
+Signed-off-by: Jason Gunthorpe &lt;jgg@mellanox.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-01 12:20:29 +0300">2019-10-01</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=3f93616951138a598d930dcaec40f2bfd9ce43bb">rtlwifi: prevent memory leak in rtl_usb_probe</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In rtl_usb_probe if allocation for usb_data fails the allocated hw
+should be released. In addition the allocated rtlpriv-&gt;usb_data should
+be released on error handling path.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Kalle Valo &lt;kvalo@codeaurora.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-10-01 12:18:48 +0300">2019-10-01</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=d563131ef23cbc756026f839a82598c8445bc45f">rsi: release skb if rsi_prepare_beacon fails</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In rsi_send_beacon, if rsi_prepare_beacon fails the allocated skb should
+be released.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Kalle Valo &lt;kvalo@codeaurora.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-30 22:54:15 -0400">2019-09-30</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=0e62395da2bd5166d7c9e14cbc7503b256a34cb0">scsi: bfa: release allocated memory in case of error</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In bfad_im_get_stats if bfa_port_get_stats fails, allocated memory needs to
+be released.
+
+Link: https://lore.kernel.org/r/20190910234417.22151-1-navid.emamdoost@gmail.com
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Martin K. Petersen &lt;martin.petersen@oracle.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-30 17:24:43 -0700">2019-09-30</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=68501df92d116b760777a2cfda314789f926476f">net: dsa: sja1105: Prevent leaking memory</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-2</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In sja1105_static_config_upload, in two cases memory is leaked: when
+static_config_buf_prepare_for_upload fails and when sja1105_inhibit_tx
+fails. In both cases config_buf should be released.
+
+Fixes: 8aa9ebccae87 ("net: dsa: Introduce driver for NXP SJA1105 5-port L2 switch")
+Fixes: 1a4c69406cc1 ("net: dsa: sja1105: Prevent PHY jabbering during switch reset")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Vladimir Oltean &lt;olteanv@gmail.com&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-30 21:58:00 +0200">2019-09-30</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=ca312438cf176a16d4b89350cade8789ba8d7133">staging: rtl8192u: fix multiple memory leaks on error path</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-5</span>/<span class="insertions">+12</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In rtl8192_tx on error handling path allocated urbs and also skb should
+be released.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Link: https://lore.kernel.org/r/20190920025137.29407-1-navid.emamdoost@gmail.com
+Signed-off-by: Greg Kroah-Hartman &lt;gregkh@linuxfoundation.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-30 21:58:00 +0200">2019-09-30</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=0911224b6bf4c86c486746f1f993cddb006901e1">staging: rtl8192u: release memory on error path</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+2</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In rtl819xU_tx_cmd if usb_submit_urb fails the allocated memories should
+be released.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Link: https://lore.kernel.org/r/20190920014303.31410-1-navid.emamdoost@gmail.com
+Signed-off-by: Greg Kroah-Hartman &lt;gregkh@linuxfoundation.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-28 17:13:39 -0400">2019-09-28</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=96c5c6e6a5b6db592acae039fed54b5c8844cd35">tracing: Have error path in predicate_parse() free its allocated memory</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-2</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In predicate_parse, there is an error path that is not going to
+out_free instead it returns directly which leads to a memory leak.
+
+Link: http://lkml.kernel.org/r/20190920225800.3870-1-navid.emamdoost@gmail.com
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Steven Rostedt (VMware) &lt;rostedt@goodmis.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-27 21:57:42 +0200">2019-09-27</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=6402939ec86eaf226c8b8ae00ed983936b164908">ieee802154: ca8210: prevent memory leak</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In ca8210_probe the allocated pdata needs to be assigned to
+spi_device-&gt;dev.platform_data before calling ca8210_get_platform_data.
+Othrwise when ca8210_get_platform_data fails pdata cannot be released.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Link: https://lore.kernel.org/r/20190917224713.26371-1-navid.emamdoost@gmail.com
+Signed-off-by: Stefan Schmidt &lt;stefan@datenfreihafen.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-27 20:55:51 +0200">2019-09-27</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=78beef629fd95be4ed853b2d37b832f766bd96ca">nfp: abm: fix memory leak in nfp_abm_u32_knode_replace</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-4</span>/<span class="insertions">+10</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In nfp_abm_u32_knode_replace if the allocation for match fails it should
+go to the error handling instead of returning. Updated other gotos to
+have correct errno returned, too.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-27 20:12:03 +0200">2019-09-27</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8ce39eb5a67aee25d9f05b40b673c95b23502e3e">nfp: flower: fix memory leak in nfp_flower_spawn_vnic_reprs</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In nfp_flower_spawn_vnic_reprs in the loop if initialization or the
+allocations fail memory is leaked. Appropriate releases are added.
+
+Fixes: b94524529741 ("nfp: flower: add per repr private data for LAG offload")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Acked-by: Jakub Kicinski &lt;jakub.kicinski@netronome.com&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-27 20:10:52 +0200">2019-09-27</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8572cea1461a006bce1d06c0c4b0575869125fa4">nfp: flower: prevent memory leak in nfp_flower_spawn_phy_reprs</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In nfp_flower_spawn_phy_reprs, in the for loop over eth_tbl if any of
+intermediate allocations or initializations fail memory is leaked.
+requiered releases are added.
+
+Fixes: b94524529741 ("nfp: flower: add per repr private data for LAG offload")
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Acked-by: Jakub Kicinski &lt;jakub.kicinski@netronome.com&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-27 16:10:58 +0800">2019-09-27</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a0ecd6fdbf5d648123a7315c695fb6850d702835">drm/komeda: prevent memory leak in komeda_wb_connector_add</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In komeda_wb_connector_add if drm_writeback_connector_init fails the
+allocated memory for kwb_conn should be released.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: James Qian Wang (Arm Technology China) &lt;james.qian.wang@arm.com&gt;
+Signed-off-by: james qian wang (Arm Technology China) &lt;james.qian.wang@arm.com&gt;
+Link: https://patchwork.freedesktop.org/patch/msgid/20190925043031.32308-1-navid.emamdoost@gmail.com
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-25 14:58:38 -0500">2019-09-25</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=104c307147ad379617472dd91a5bcb368d72bd6d">drm/amd/display: prevent memory leak</a></td><td>Navid Emamdoost</td><td>5</td><td><span class="deletions">-0</span>/<span class="insertions">+5</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In dcn*_create_resource_pool the allocated memory should be released if
+construct pool fails.
+
+Reviewed-by: Harry Wentland &lt;harry.wentland@amd.com&gt;
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Alex Deucher &lt;alexander.deucher@amd.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-23 11:28:50 +0300">2019-09-23</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=b8d17e7d93d2beb89e4f34c59996376b8b544792">ath10k: fix memory leak</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In ath10k_usb_hif_tx_sg the allocated urb should be released if
+usb_submit_urb fails.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Kalle Valo &lt;kvalo@codeaurora.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-13 16:55:55 -0300">2019-09-13</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4a9d46a9fe14401f21df69cea97c62396d5fb053">RDMA: Fix goto target to release the allocated memory</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In bnxt_re_create_srq(), when ib_copy_to_udata() fails allocated memory
+should be released by goto fail.
+
+Fixes: 37cb11acf1f7 ("RDMA/bnxt_re: Add SRQ support for Broadcom adapters")
+Link: https://lore.kernel.org/r/20190910222120.16517-1-navid.emamdoost@gmail.com
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: Jason Gunthorpe &lt;jgg@mellanox.com&gt;
+Signed-off-by: Jason Gunthorpe &lt;jgg@mellanox.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-12 16:20:54 +0200">2019-09-12</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4c1fde5077dcad1a2a10a6a0883c8f94326c4971">platform/chrome: cros_usbpd_logger: null check create_singlethread_workqueue</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In cros_usbpd_logger_probe the return value of
+create_singlethread_workqueue may be null, it should be checked.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Enric Balletbo i Serra &lt;enric.balletbo@collabora.com&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-12 11:58:44 +0100">2019-09-12</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a21b7f0cff1906a93a0130b74713b15a0b36481d">net: qrtr: fix memort leak in qrtr_tun_write_iter</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+4</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In qrtr_tun_write_iter the allocated kbuf should be release in case of
+error or success return.
+
+v2 Update: Thanks to David Miller for pointing out the release on success
+path as well.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-11 09:10:13 +0100">2019-09-11</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2507e6ab7a9a440773be476141a255934468c5ef">wimax: i2400: fix memory leak</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In i2400m_op_rfkill_sw_toggle cmd buffer should be released along with
+skb response.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-10 16:31:40 +0300">2019-09-10</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=728c1e2a05e4b5fc52fab3421dce772a806612a2">ath9k: release allocated buffer if timed out</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In ath9k_wmi_cmd, the allocated network buffer needs to be released
+if timeout happens. Otherwise memory will be leaked.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Kalle Valo &lt;kvalo@codeaurora.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-10 16:28:29 +0300">2019-09-10</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=853acf7caf10b828102d92d05b5c101666a6142b">ath9k_htc: release allocated buffer if timed out</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In htc_config_pipe_credits, htc_setup_complete, and htc_connect_service
+if time out happens, the allocated buffer needs to be released.
+Otherwise there will be memory leak.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Kalle Valo &lt;kvalo@codeaurora.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-04 16:11:46 +0200">2019-09-04</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=d94dfd798c4839b642f534580109dc6dfc3901a9">Bluetooth: bpa10x: change return value</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+1</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+When returning from bpa10x_send_frame, it is necessary to propagate any
+potential errno returned from usb_submit_urb.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Marcel Holtmann &lt;marcel@holtmann.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-09-04 12:43:45 +0200">2019-09-04</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=ea5ab2e422de0ef0fc476fe40f0829abe72684cd">8250_lpss: check null return when calling pci_ioremap_bar</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-2</span>/<span class="insertions">+8</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+pci_ioremap_bar may return null. This is eventually de-referenced at
+drivers/dma/dw/core.c:1154 and drivers/dma/dw/core.c:1168. A null check
+is needed to prevent null de-reference. I am adding the check and in
+case of failure. Thanks to Andy Shevchenko for the hint on the necessity
+of pci_iounmap when exiting.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Reviewed-by: Andy Shevchenko &lt;andy.shevchenko@gmail.com&gt;
+Link: https://lore.kernel.org/r/20190719174848.24216-1-navid.emamdoost@gmail.com
+Signed-off-by: Greg Kroah-Hartman &lt;gregkh@linuxfoundation.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-08-06 15:35:28 +0300">2019-08-06</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=b95c732234fa40319c6aae2db6b35e9a7f41d79c">mt7601u: null check the allocation</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+3</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+devm_kzalloc may fail and return NULL. So the null check is needed.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Acked-by: Jakub Kicinski &lt;kubakici@wp.pl&gt;
+Signed-off-by: Kalle Valo &lt;kvalo@codeaurora.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-08-01 18:38:08 +0200">2019-08-01</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=09acf29c8246a20c6e255969df7e1131317181da">staging: rtl8192u: null check the kzalloc</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-2</span>/<span class="insertions">+9</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+In rtl8192_init_priv_variable allocation for priv-&gt;pFirmware may fail,
+so a null check is necessary.priv-&gt;pFirmware is accessed later in
+rtl8192_adapter_start. I added the check and made appropriate changes
+to propagate the errno to the caller.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+
+Link: https://lore.kernel.org/r/20190731141925.29268-1-navid.emamdoost@gmail.com
+Signed-off-by: Greg Kroah-Hartman &lt;gregkh@linuxfoundation.org&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-07-26 13:44:42 +0200">2019-07-26</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=afd6d4f5a52c16e1483328ac074abb1cde92c29f">drm/panel: check failure cases in the probe func</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+13</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+The following function calls may fail and return NULL, so the null check
+is added.
+of_graph_get_next_endpoint
+of_graph_get_remote_port_parent
+of_graph_get_remote_port
+
+Update: Thanks to Sam Ravnborg, for suggession on the use of goto to avoid
+leaking endpoint.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: Sam Ravnborg &lt;sam@ravnborg.org&gt;
+Link: https://patchwork.freedesktop.org/patch/msgid/20190724195534.9303-1-navid.emamdoost@gmail.com
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-07-25 11:48:06 -0700">2019-07-25</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=3008e06fdf0973770370f97d5f1fba3701d8281d">st_nci_hci_connectivity_event_received: null check the allocation</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+2</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+devm_kzalloc may fail and return NULL. So the null check is needed.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-07-25 11:47:10 -0700">2019-07-25</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9891d06836e67324c9e9c4675ed90fc8b8110034">st21nfca_connectivity_event_received: null check the allocation</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-0</span>/<span class="insertions">+2</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+devm_kzalloc may fail and return null. So the null check is needed.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+<tr class="logheader"><td><span title="2019-07-21 11:47:30 -0700">2019-07-21</span></td><td class="logsubject"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=bb1320834b8a80c6ac2697ab418d066981ea08ba">allocate_flower_entry: should check for null deref</a></td><td>Navid Emamdoost</td><td>1</td><td><span class="deletions">-1</span>/<span class="insertions">+2</span></td></tr>
+<tr class="nohover-highlight"><td></td><td colspan="5" class="logmsg">
+allocate_flower_entry does not check for allocation success, but tries
+to deref the result. I only moved the spin_lock under null check, because
+ the caller is checking allocation's status at line 652.
+
+Signed-off-by: Navid Emamdoost &lt;navid.emamdoost@gmail.com&gt;
+Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
+
+
+</td></tr>
+</tbody></table><ul class="pager"></ul></div> <!-- class=content -->
+<div class="footer">generated by <a href="https://git.zx2c4.com/cgit/about/">cgit </a> (<a href="https://git-scm.com/">git 2.34.1</a>) at 2023-01-29 22:03:45 +0000</div>
+</div> <!-- id=cgit -->
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
